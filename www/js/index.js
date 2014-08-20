@@ -44,7 +44,8 @@ var app = {
     adjustBrowser: function() {
     	var ios7 = navigator.userAgent.match(/(iPad|iPhone|iPod touch);.*CPU.*OS 7_\d/i);
     	if (ios7) {
-    		$(body).addClass('ios7');
+    		$('body').addClass('ios7');
+        	$('h1').html('ios7');
     	}
     },
     

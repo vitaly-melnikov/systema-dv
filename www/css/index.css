@@ -17,3 +17,7 @@ span.cancelled,
 div.cancelled p {
 	color: red;
 }
+
+.ios7 div.header {
+	margin-top: 10px;
+}
