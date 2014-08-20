@@ -1,30 +1,92 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Page Title</title>
-
+<meta charset="utf-8" />
+<title>Page Title</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.js"></script>
+	<title>Systema DV</title>
 </head>
 <body>
 
-<div data-role="page">
+	<div data-role="page" id="home">
 
-	<div data-role="header">
-		<h1>Page Title</h1>
-	</div><!-- /header -->
+		<div data-role="header" class='header' data-position="fixed">
+			<h1>статус заказа</h1>
+		</div>
+		<!-- /header -->
 
-	<div role="main" class="ui-content">
-		<p>Page content goes here.</p>
-	</div><!-- /content -->
+		<div data-role="main" class="ui-content">
+			<p>Введите номер заказа:</p>
+			<p>
+				<input id="number" type="search" />
+			</p>
+			<p>
+				<button id="search">проверить</button>
+			</p>
+		</div>
+		<!-- /content -->
+	</div>
+	<!-- /page -->
 
-	<div data-role="footer">
-		<h4>Page Footer</h4>
-	</div><!-- /footer -->
-</div><!-- /page -->
+	<div data-role="page" id="results">
 
+		<div data-role="header">
+			<a href="#home" data-icon="home">поиск</a>
+			<h1>заказ</h1>
+		</div>
+		<!-- /header -->
+
+		<div data-role="main" class="ui-content" id='results-content'>
+
+			<div data-role="collapsibleset" >
+			
+				<div data-role="collapsible" class='status' data-collapsed="false">
+					<h3>Статус</h3>
+					<p></p>
+				</div>
+
+				<div data-role="collapsible" class='news'>
+					<h3>Журнал заказа</h3>
+					<div></div>
+				</div>
+
+				<div data-role="collapsible" class='issue'>
+					<h3>Данные заказа</h3>
+					<p class='subject' />
+					<p class='date'>
+						<label>заказ от:</label> <span class='begin'></span>
+					</p>
+					<p class='date'>
+						<label>поставка:</label> <span class='end'></span>
+					</p>
+					<div class='description'></div>
+
+				</div>
+			</div>
+		</div>
+		<!-- /content -->
+	</div>
+	<!-- /page -->
+
+	<div data-role="dialog" id="message">
+		<div data-role="header">
+			<h1>Systema-DV</h1>
+		</div>
+		<div data-role="main" id="message-content" class="ui-content">
+			<div id="message-text" style='padding:20px'></div>
+			<button id="close">закрыть</button>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript">
+            app.initialize();
+    </script>
+ 
 </body>
 </html>

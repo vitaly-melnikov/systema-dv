@@ -22,29 +22,30 @@ var app = {
         this.bindEvents();
         this.initSearch();
         this.initMessages();
+        this.adjustBrowser();
     },
     // Bind Event Listeners
     //
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
-        //document.addEventListener('deviceready', this.onDeviceReady, false);
     	
     	document.addEventListener('deviceready', this.allow, false);
     	document.addEventListener('mobileinit', this.allow, false);
     	console.log('listeners configured');
     	$.mobile.allowCrossDomainPages = true;
     	
-    	/*
-    	$(document).bind("mobileinit", function(){
-    		   $.mobile.allowCrossDomainPages = true;
-    		   alert('CROSS ALLOWED');
-    	});
-    	*/    	
     },
     
     allow: function() {
 	   $.mobile.allowCrossDomainPages = true;
+    },
+    
+    adjustBrowser: function() {
+    	var ios7 = navigator.userAgent.match(/(iPad|iPhone|iPod touch);.*CPU.*OS 7_\d/i);
+    	if (ios7) {
+    		$(body).addClass('ios7');
+    	}
     },
     
     add: function(parent, tag, content, cls) {
