@@ -99,10 +99,10 @@ var app = {
             timeout: 10000,
             jsonpCallback: 'successCallback',
             beforeSend: function() {
-                $.mobile.showPageLoadingMsg(true);
+            	$.mobile.loading("show");
             },
             complete: function() {
-                $.mobile.hidePageLoadingMsg();
+            	$.mobile.loading("hide");
             },
             success: function (result) {
             	app.displayResults(number, result);

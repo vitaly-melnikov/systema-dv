@@ -2,47 +2,44 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<meta name="format-detection" content="telephone=no" />
-<!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-<meta content="width=device-width, minimum-scale=1, maximum-scale=1" name="viewport">
-<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
-<link rel="stylesheet" type="text/css" href="css/index.css" />
-<meta name="msapplication-tap-highlight" content="no" />
-<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-<script
-	src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
-<title>Systema DV</title>
+<title>Page Title</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.3/jquery.mobile-1.4.3.min.js"></script>
+	<title>Systema DV</title>
 </head>
 <body>
-	<div data-role="page" data-theme="b" id="home">
+	<div data-role="page" id="home">
 
-		<div data-role="header" data-theme="b">
+		<div data-role="header">
 			<h1>- статус заказа - </h1>
 		</div>
 		<!-- /header -->
 
-		<div data-role="content">
+		<div data-role="main" class="ui-content">
 			<p>Введите номер заказа:</p>
 			<p>
 				<input id="number" type="search" />
 			</p>
 			<p>
-				<button id="search" value="проверить"></button>
+				<button id="search">проверить</button>
 			</p>
 		</div>
 		<!-- /content -->
 	</div>
 	<!-- /page -->
 
-	<div data-role="page" data-theme="b" id="results">
+	<div data-role="page" id="results">
 
-		<div data-role="header" data-theme="b">
-			<a href="#home" data-icon="arrow-l">Вернуться</a>
+		<div data-role="header">
+			<a href="#home" data-icon="home">поиск</a>
 			<h1>заказ</h1>
 		</div>
 		<!-- /header -->
 
-		<div data-role="content" id='results-content'>
+		<div data-role="main" class="ui-content" id='results-content'>
 
 			<div data-role="collapsibleset" >
 			
@@ -74,13 +71,13 @@
 	</div>
 	<!-- /page -->
 
-	<div data-role="dialog" id="message" data-theme="b">
-		<div data-role="header" data-theme="b">
+	<div data-role="dialog" id="message">
+		<div data-role="header">
 			<h1>Systema-DV</h1>
 		</div>
-		<div data-role="content" id="message-content" class="ui-content ui-page-theme-b">
+		<div data-role="main" id="message-content" class="ui-content">
 			<div id="message-text" style='padding:20px'></div>
-			<button id="close" value="закрыть"></button>
+			<button id="close">закрыть</button>
 		</div>
 	</div>
 
