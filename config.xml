@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="ru.dynamicweb.systema-dv" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>SystemaDV</name>
+    <description>
+        Check delivery by tracking number  
+    </description>
+    <author email="vme@dynamicweb,ru" href="http://dynamicweb.ru">
+        Dynamicweb RU
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <icon src="icon.png"/>
+</widget>
