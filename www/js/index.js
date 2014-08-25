@@ -45,7 +45,6 @@ var app = {
     	var ios7 = navigator.userAgent.match(/(iPad|iPhone|iPod touch);.*CPU.*OS 7_\d/i);
     	if (ios7) {
     		$('body').addClass('ios7');
-        	$('h1').html('ios7');
     	}
     },
     
@@ -96,7 +95,9 @@ var app = {
     },
     
     doSearch: function(number) {
-    	$.ajax({url: 'http://192.168.1.196:8080/logistic/ntrack?number=' + number,
+    	$.ajax({
+    		//url: 'http://192.168.1.196:8080/logistic/ntrack?number=' + number,
+    		url: 'http://46.37.147.253:85/ntrack?number=' + number,
             dataType: "jsonp",
             timeout: 10000,
             jsonpCallback: 'successCallback',
