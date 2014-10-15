@@ -18,6 +18,8 @@ div.cancelled p {
 	color: red;
 }
 
-.ios7 div.header {
+.ios7 div.header,
+.ios8 div.header,
+.ios9 div.header {
 	margin-top: 22px;
 }
