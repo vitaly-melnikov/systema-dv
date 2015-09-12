@@ -17,6 +17,9 @@
  * under the License.
  */
 var app = {
+	//root:	'http://192.168.1.196:8080/logistic/',
+	root:	'http://46.37.147.253:85/',
+
     // Application Constructor
     initialize: function() {
         this.bindEvents();
@@ -86,6 +89,33 @@ var app = {
     		divIssue.find('p.date span.begin').html(result.dateBegin);
     		divIssue.find('p.date span.end').html(result.dateEnd);
     		divIssue.find('div.description').html(result.description);
+
+    		// docs
+    		var containerDocs = content.find('div.docs');
+    		var divDocs = containerDocs.find('div');
+    		divDocs.empty();
+    		if (result.docs && result.docs.length) {
+    			containerDocs.show();
+    			var root = app.root;
+    			if (!root.endsWith("/")) {
+    				root += "/";
+    			}
+    			for (var i = 0; i < result.docs.length; i++) {
+    				var item = result.docs[i];
+    				var p = $("<p></p>");
+    				var a = $("<a target='_blank'></a>");
+    				var link = item.link;
+    				if (link.startsWith('/')) {
+    					link = link.substr(1);
+    				}
+    				a.attr('href', app.root + link);
+    				a.html(item.title);
+    				divDocs.append(p);
+    				p.append(a);
+    			}
+    		} else {
+    			containerDocs.hide();
+    		}
     		
     		$.mobile.changePage("#results");
     		
@@ -96,8 +126,7 @@ var app = {
     
     doSearch: function(number) {
     	$.ajax({
-    		//url: 'http://192.168.1.196:8080/logistic/ntrack?number=' + number,
-    		url: 'http://46.37.147.253:85/ntrack?number=' + number,
+    		url: app.root + 'ntrack?number=' + number,
             dataType: "jsonp",
             timeout: 10000,
             jsonpCallback: 'successCallback',
