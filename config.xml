@@ -13,7 +13,7 @@
     <content src="index.html" />
     <access origin="*" />
     <icon src="icon.png"/>
-    <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreen" value="icon" />
     
 	<gap:config-file platform="ios" parent="CFBundleVersion">
 		<string>0.0.1</string>

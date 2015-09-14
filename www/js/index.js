@@ -94,21 +94,23 @@ var app = {
     		var containerDocs = content.find('div.docs');
     		var divDocs = containerDocs.find('div');
     		divDocs.empty();
-    		if (result.docs && result.docs.length) {
+    		if (result.issueDocs && result.issueDocs.length) {
     			containerDocs.show();
     			var root = app.root;
-    			if (!root.endsWith("/")) {
+    			if (root.lastIndexOf("/") != root.length - 1) {
     				root += "/";
     			}
-    			for (var i = 0; i < result.docs.length; i++) {
-    				var item = result.docs[i];
+    			for (var i = 0; i < result.issueDocs.length; i++) {
+    				var item = result.issueDocs[i];
     				var p = $("<p></p>");
-    				var a = $("<a target='_blank'></a>");
+    				var a = $("<a target='_blank' data-rel='external'></a>");
     				var link = item.link;
-    				if (link.startsWith('/')) {
+    				if (0 == link.indexOf('/')) {
     					link = link.substr(1);
     				}
-    				a.attr('href', app.root + link);
+    				a.attr('onclick', "navigator.app.loadUrl('" + 
+    						'https://docs.google.com/viewer?url=' + encodeURIComponent(app.root + link) + 
+    						"', { openExternal:true });");
     				a.html(item.title);
     				divDocs.append(p);
     				p.append(a);
@@ -116,7 +118,6 @@ var app = {
     		} else {
     			containerDocs.hide();
     		}
-    		
     		$.mobile.changePage("#results");
     		
     	} else {
