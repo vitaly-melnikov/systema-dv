@@ -12,7 +12,11 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
-    <icon src="icon.png"/>
+ 	
+	<icon src="res/icon/ios/Icon-76@2x.png" gap:platform="ios" width="152" height="152" />
+	<icon src="res/icon/ios/Icon-60@2x.png" gap:platform="ios" width="120" height="120" />
+	<icon src="res/icon/ios/Icon-76.png" gap:platform="ios" width="76" height="76" />
+
     <preference name="SplashScreen" value="icon" />
     
 	<gap:config-file platform="ios" parent="CFBundleVersion">
